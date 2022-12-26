@@ -1,0 +1,152 @@
+body{
+	background-color: #800004;
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+}
+
+.scroller{
+	margin-top: 5vh;
+	font-size: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.scroller img{
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+}
+
+.scroller-content{
+	padding-top: 10vh;
+	background-color: #4d0003;
+	text-align: center;
+}
+
+@keyframes fadein {
+	from {opacity: 0%}
+	to {opacity: 100%}
+}
+
+.scroller-content-title{
+	font-size: 150px;
+	font-family: 'Unbounded', cursive;
+	color: #e10600;
+}
+
+.scroller-content-title.visible{
+	animation-name: fadein;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-in;
+}
+
+.scroller-content-example{
+	width: 100%;
+}
+
+.scroller-content-members-image{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.card-member-small{
+	transform: scale(0.5);
+	opacity: 50%;
+	grid-row: 1;
+	grid-column: 1;
+	z-index: 9999;
+	transition: 0.5s all ease-in-out;
+}
+
+.card-member-rect{
+	background-color: #800004;
+	opacity: 0%;
+	transform: scale(0.5);
+	grid-row: 1;
+	grid-column: 1;
+	z-index: 0;
+	transition: 0.5s all ease-in-out;
+}
+
+.card-member-descriptor{
+	grid-column: 1;
+	grid-row: 1;
+	margin-top: 45vh;
+	margin-right: 15vw;
+	margin-left: 5vw;
+	z-index: 99999;
+}
+
+.card-member-name{
+	font-family: 'Caveat', cursive;
+	font-size: 120px;
+	color: #e10600;
+	margin-top: 0;
+	margin-bottom: 0;
+	transition: 0.5s all ease-in-out;
+	opacity: 0;
+}
+
+.card-member-tag{
+	font-family: 'Caveat', cursive;
+	font-size: 80px;
+	color: #e10600;
+	margin-top: 0;
+	margin-bottom: 0;
+	transition: 0.5s all ease-in-out;
+	opacity: 0;
+}
+
+.card-member{
+	display: grid;
+}
+
+.card-member:hover .card-member-small{
+	opacity: 100%;
+	transform: scale(0.6);
+	rotate: 5deg;
+}
+
+.card-member:hover .card-member-rect{
+	opacity: 100%;
+	transform: scale(0.6);
+	rotate: -5deg;
+}
+
+.card-member:hover .card-member-name{
+	opacity: 1;
+	font-size: 150px;
+	rotate: 15deg;
+	opacity: 1;
+}
+
+.card-member:hover .card-member-tag{
+	opacity: 1;
+	font-size: 110px;
+	rotate: 15deg;
+	opacity: 1;
+}
+
+.scroller-content-links{
+	display: flex;
+	flex-direction: column;
+	background-color: #3A0002;
+	padding-bottom: 3vh;
+	text-align: center;
+}
+
+.scroller-content-links-heading{
+	font-family: 'Unbounded', bold;
+	font-size: 70px;
+	color: #e10600;
+}
+
+.scroller-content-links-url{
+	font-family: 'Unbounded';
+	font-size: 50px;
+	color: #800004;
+	text-decoration: none;
+}
