@@ -1,8 +1,8 @@
 body{
 	background-color: #800004;
-	margin-left: 0;
-	margin-right: 0;
-	margin-bottom: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
 }
 
 .scroller{
@@ -31,9 +31,10 @@ body{
 }
 
 .scroller-content-title{
-	font-size: 150px;
+	font-size: 10vw;
 	font-family: 'Unbounded', cursive;
 	color: #e10600;
+	margin-bottom: 0;
 }
 
 .scroller-content-title.visible{
@@ -42,91 +43,82 @@ body{
 	animation-timing-function: ease-in;
 }
 
-.scroller-content-example{
-	width: 100%;
-}
-
-.scroller-content-members-image{
+.scroller-content-members{
 	display: flex;
 	flex-direction: row;
-	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
 }
 
-.card-member-small{
+.scroller-member{
+	display: flex;
+	flex: 1 1 400px;
+	flex-direction: column;
+	min-height: 0;
+	min-width: 400px;
+}
+
+.scroller-member-wrapper-image{
+	display: flex;
+	width: fit-content;
+	height: fit-content;
+}
+
+.scroller-member-image{
+	opacity: 0.5;
 	transform: scale(0.5);
-	opacity: 50%;
-	grid-row: 1;
-	grid-column: 1;
 	z-index: 9999;
 	transition: 0.5s all ease-in-out;
 }
 
-.card-member-rect{
+.scroller-member-wrapper-rect{
+	position: relative;
+}
+
+.scroller-member-rect{
 	background-color: #800004;
-	opacity: 0%;
 	transform: scale(0.5);
-	grid-row: 1;
-	grid-column: 1;
-	z-index: 0;
+	opacity: 0;
 	transition: 0.5s all ease-in-out;
 }
 
-.card-member-descriptor{
-	grid-column: 1;
-	grid-row: 1;
-	margin-top: 45vh;
-	margin-right: 15vw;
-	margin-left: 5vw;
+.scroller-member-wrapper-desc{
 	z-index: 99999;
-}
-
-.card-member-name{
-	font-family: 'Caveat', cursive;
-	font-size: 120px;
-	color: #e10600;
-	margin-top: 0;
-	margin-bottom: 0;
-	transition: 0.5s all ease-in-out;
+	position: relative;
+	transform: scale(0.8);
 	opacity: 0;
-}
-
-.card-member-tag{
-	font-family: 'Caveat', cursive;
-	font-size: 80px;
-	color: #e10600;
-	margin-top: 0;
-	margin-bottom: 0;
 	transition: 0.5s all ease-in-out;
-	opacity: 0;
 }
 
-.card-member{
-	display: grid;
+.scroller-member-name{
+	margin: 0;
+	font-family: 'Caveat', cursive;
+	font-size: 100px;
+	color: #e10600;
 }
 
-.card-member:hover .card-member-small{
-	opacity: 100%;
+.scroller-member-role{
+	margin: 0;
+	font-family: 'Caveat', cursive;
+	font-size: 70px;
+	color: #e10600;
+}
+
+.scroller-member:hover .scroller-member-image{
 	transform: scale(0.6);
 	rotate: 5deg;
+	opacity: 1;
 }
 
-.card-member:hover .card-member-rect{
-	opacity: 100%;
+.scroller-member:hover .scroller-member-rect{
 	transform: scale(0.6);
 	rotate: -5deg;
-}
-
-.card-member:hover .card-member-name{
-	opacity: 1;
-	font-size: 150px;
-	rotate: 15deg;
 	opacity: 1;
 }
 
-.card-member:hover .card-member-tag{
-	opacity: 1;
-	font-size: 110px;
-	rotate: 15deg;
+.scroller-member:hover .scroller-member-wrapper-desc{
+	transform: scale(1.0);
+	rotate: 5deg;
 	opacity: 1;
 }
 
@@ -140,13 +132,17 @@ body{
 
 .scroller-content-links-heading{
 	font-family: 'Unbounded', bold;
-	font-size: 70px;
+	font-size: 5vw;
 	color: #e10600;
+}
+
+.scroller-content-links-wrapper{
+	text-align: center;
 }
 
 .scroller-content-links-url{
 	font-family: 'Unbounded';
-	font-size: 50px;
+	font-size: 3vw;
 	color: #800004;
 	text-decoration: none;
 }
