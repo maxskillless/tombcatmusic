@@ -1,9 +1,14 @@
 el = document.querySelector(".scroller-content-title-containter");
-text = document.querySelector(".scroller-content-title")
-img = document.querySelectorAll("[class=card-member-small]")
-rects = document.querySelectorAll("[class=card-member-rect]")
+text = document.querySelector(".scroller-content-title");
+img = document.querySelectorAll("[class=scroller-member-image]");
+rects = document.querySelectorAll("[class=scroller-member-rect]");
+desc = document.querySelectorAll("[class=scroller-member-wrapper-desc]");
+rw = document.querySelectorAll("[class=scroller-member-wrapper-rect]");
+member = document.querySelectorAll("[class=scroller-member]");
 
 var onScreen = false
+
+console.log(name)
 
 window.addEventListener('scroll', function getRect() {
 	var rect = el.getBoundingClientRect();
@@ -19,8 +24,25 @@ window.addEventListener('scroll', function getRect() {
 	};
 });
 
-img.forEach( function(item, index){
-	rects[index].style['width'] = item.clientWidth + "px";
-	rects[index].style.height = item.clientHeight + "px";
-	console.log(item.style['z-index'])
-});
+window.onload = function() {
+	img.forEach( function(item, index){
+		console.log(name[index])
+		rects[index].style.width = item.clientWidth + 'px';
+		rects[index].style.height = item.clientHeight + 'px';
+		rw[index].style.top = -item.clientHeight + 'px'
+		desc[index].style.top = -(1.5 * item.clientHeight) + 'px'
+		desc[index].style.left = -(0.16 * item.clientWidth) + 'px'
+		member[index].style.height = item.clientHeight + 'px'
+	})
+};
+
+window.onresize = function() {
+	img.forEach( function(item, index){
+		rects[index].style.width = item.clientWidth + 'px';
+		rects[index].style.height = item.clientHeight + 'px';
+		rw[index].style.top = -item.clientHeight + 'px'
+		desc[index].style.top = -(1.5 * item.clientHeight) + 'px'
+		desc[index].style.left = -(0.16 * item.clientWidth) + 'px'
+		member[index].style.height = item.clientHeight + 'px'
+	})
+}
